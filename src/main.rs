@@ -1,19 +1,21 @@
-mod food;
+mod db;
+mod lib;
+mod module;
+mod services;
+mod struct_todo;
 
-use axum::{Router, response::Json, routing::get};
-use serde_json::{Value, json};
-use food::{get_food};
-
-async fn json_text() -> Json<Value> {
-    Json(json!({"name": "bank"}))
-}
+use crate::module::handle_list::{add_todo, get_list};
+use axum::{
+    Router,
+    routing::{get, post},
+};
 
 #[tokio::main]
 async fn main() {
     let app = Router::new()
         .route("/", get(|| async { "Hello, World!" }))
-        .route("/json", get(json_text))
-        .route("/food", get(get_food));
+        .route("/list", get(get_list))
+        .route("/add", post(add_todo));
 
     let listener = match tokio::net::TcpListener::bind("0.0.0.0:3000").await {
         Ok(listener) => listener,

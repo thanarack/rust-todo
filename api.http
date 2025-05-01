@@ -1,0 +1,22 @@
+GET http://localhost:3000
+Content-Type: application/json
+
+
+###
+
+GET http://localhost:3000/list
+Content-Type: application/json
+
+###
+
+POST http://localhost:3000/add
+Content-Type: application/json
+
+{
+    "todo": "dsffsd"
+}
+
+###
+
+
+

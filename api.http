@@ -13,7 +13,7 @@ POST http://localhost:3000/add
 Content-Type: application/json
 
 {
-    "todo": "dsffsd"
+    "todo": "wwwww"
 }
 
 ###

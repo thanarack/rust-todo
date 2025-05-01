@@ -2,7 +2,7 @@ mod db;
 mod lib;
 mod module;
 mod services;
-mod struct_todo;
+mod struct_type;
 
 use crate::module::handle_list::{add_todo, get_list};
 use axum::{
